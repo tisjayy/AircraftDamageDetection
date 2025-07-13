@@ -1,0 +1,6 @@
+Summary
+Task: Classify aircraft damage and generate descriptive captions
+
+Model: VGG16 + Custom Dense Layers (classification), BLIP (captioning)
+
+Accuracy: ~78% test accuracy
