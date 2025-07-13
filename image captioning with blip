@@ -1,0 +1,14 @@
+from transformers import BlipProcessor, BlipForConditionalGeneration
+from PIL import Image
+import torch
+
+processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
+blip_model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
+
+img_path = "aircraft_damage_dataset_v1/test/dent/149_22_JPG_jpg.rf.4899cbb6f4aad9588fa3811bb886c34d.jpg"
+image = Image.open(img_path).convert("RGB")
+inputs = processor(image, text="This is a picture of", return_tensors="pt")
+
+output = blip_model.generate(**inputs)
+caption = processor.decode(output[0], skip_special_tokens=True)
+print("Caption:", caption)
