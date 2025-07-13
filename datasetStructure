@@ -1,0 +1,10 @@
+aircraft_damage_dataset_v1/
+├── train/
+│   ├── dent/
+│   └── crack/
+├── valid/
+│   ├── dent/
+│   └── crack/
+└── test/
+    ├── dent/
+    └── crack/
